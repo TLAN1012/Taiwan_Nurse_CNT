@@ -16,7 +16,7 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-07-03T11:42:10+08:00"
+    "generated": "2026-07-03T12:31:40+08:00"
   },
   "events": [
     {
@@ -30,6 +30,20 @@
       "region": "other",
       "ctext": "積分依主辦公告",
       "url": "https://www.psynurse.org.tw/news.aspx"
+    },
+    {
+      "date": "2026-07-10",
+      "title": "115年度急重症護理繼續教育視訊直播講座(四)急重症暴力與壓力因應",
+      "location": "中華民國急重症護理學會（線上直播）",
+      "credits": {
+        "nurse": 3
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": true,
+      "region": "online",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/409"
     },
     {
       "date": "2026-07-14",
@@ -58,6 +72,18 @@
       "region": "south",
       "ctext": "",
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
+    },
+    {
+      "date": "2026-07-18",
+      "title": "2026預防手術部位感染與病人安全工作坊",
+      "location": "台灣手術全期護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "perio",
+      "online": false,
+      "region": "other",
+      "ctext": "精選公告，詳見學會",
+      "url": "https://www.torna.org.tw/"
     },
     {
       "date": "2026-07-23",
@@ -144,6 +170,20 @@
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
+      "date": "2026-07-23",
+      "title": "115年度急重症護理繼續教育視訊直播講座(五)災難護理",
+      "location": "中華民國急重症護理學會（線上直播）",
+      "credits": {
+        "nurse": 3
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": true,
+      "region": "online",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/410"
+    },
+    {
       "date": "2026-07-24",
       "title": "護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(一)",
       "location": "永和耕莘醫院住院大樓12樓國際會議廳 新北市永和區中興街80號",
@@ -226,6 +266,32 @@
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
+      "date": "2026-08-21",
+      "title": "115年度急重症護理繼續教育視訊直播講座(六)急重症器官衰竭照護",
+      "location": "中華民國急重症護理學會（線上直播）",
+      "credits": {
+        "nurse": 3
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": true,
+      "region": "online",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/413"
+    },
+    {
+      "date": "2026-09-04",
+      "title": "將於115年9月4日舉辦115年度第12次醫療器材專業人員手術病人安全研習會(新學員及補學分課程)，",
+      "location": "台灣手術全期護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "perio",
+      "online": false,
+      "region": "other",
+      "ctext": "精選公告，詳見學會",
+      "url": "https://www.torna.org.tw/"
+    },
+    {
       "date": "2026-09-08",
       "title": "臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略 (北區) -亞東醫院",
       "location": "亞東醫院國際會議廳 新北市板橋區南雅南路二段21號（南棟14樓）",
@@ -252,6 +318,34 @@
       "region": "south",
       "ctext": "",
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
+    },
+    {
+      "date": "2026-09-10",
+      "title": "115年度急重症CKRT照護研習會(北區)",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 6
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "north",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/415"
+    },
+    {
+      "date": "2026-09-24",
+      "title": "115年外傷護理繼續教育線上直播研習會(三)",
+      "location": "中華民國急重症護理學會（線上直播）",
+      "credits": {
+        "nurse": 6
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": true,
+      "region": "online",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/419"
     },
     {
       "date": "2026-12-31",

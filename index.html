@@ -163,7 +163,7 @@
 </header>
 
 <div class="notice">
-  <b>ℹ️ 資料說明：</b>課程資料<b>自動抓取自各護理公會／學會之公開頁面</b>（最後更新：<span id="updated">2026-07-03</span>）。目前公開可抓取者為<b>護理師護士公會全聯會、麻醉專科護理學會、精神衛生護理學會</b>；台灣護理學會、專科護理師學會等多數學會之課程列表<b>需登入會員</b>，僅能取得公開／精選課程。實際課程、日期、學分數與適用積分別，<b>一律以各主辦公會／學會之官方公告為準</b>。
+  <b>ℹ️ 資料說明：</b>課程資料<b>自動抓取自各護理公會／學會之公開頁面</b>（最後更新：<span id="updated">2026-07-03</span>）。本站的價值在<b>聚合</b>——把需登入才看得到的學會之<b>公開精選課程</b>也一併整理進來。目前涵蓋：護理師護士公會全聯會、急重症護理學會、麻醉專科護理學會、精神衛生護理學會、手術全期護理學會（精選公告）等；台灣護理學會、專科護理師學會等站台阻擋程式擷取或需登入，僅能取得公開部分。實際課程、日期、學分與積分別<b>一律以各主辦公會／學會之官方公告為準</b>。
 </div>
 
 <div class="filters">
@@ -248,8 +248,8 @@ const SRC_URL = {
   nuna:'https://www.nurse.org.tw/', twna:'https://www.twna.org.tw/',
   tnpa:'https://www.tnpa.org.tw/', tana:'https://www.tana.org.tw/',
   tmcs:'http://www.tmcs-edu.org.tw/', psy:'https://www.psynurse.org.tw/',
-  onco:'https://www.twna-oncology.org.tw/', perio:'https://www.aorn.org.tw/',
-  critical:'https://www.tanem.org.tw/', ob:'https://www.twaogn.org.tw/',
+  onco:'https://www.onst.org.tw/', perio:'https://www.torna.org.tw/',
+  critical:'https://www.taccn.org.tw/', ob:'',
   midwife:'http://www.midwifery.org.tw/', local:'', other:''
 };
 
@@ -280,22 +280,29 @@ const REGION_LABELS = { north:'🏙️ 北部', central:'🏔️ 中部', south:
 /* EVENTS:START — 此區塊由 scripts/build.py 依 data/events.json 自動產生，可手動編輯作為預設範例 */
 const EVENTS = [
   {date:"2026-07-09", title:"草本療癒力－中醫藥養生與心理健康促進之護理應用研習會", location:"中華民國精神衛生護理學會", credits:{}, cat:"pro", src:"psy", online:false, region:"other", ctext:"積分依主辦公告", url:"https://www.psynurse.org.tw/news.aspx"},
+  {date:"2026-07-10", title:"115年度急重症護理繼續教育視訊直播講座(四)急重症暴力與壓力因應", location:"中華民國急重症護理學會（線上直播）", credits:{nurse:3}, cat:"pro", src:"critical", online:true, region:"online", ctext:"", url:"https://www.taccn.org.tw/activity/detail/409"},
   {date:"2026-07-14", title:"臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略 (中區) -中慈場", location:"台中慈濟醫院大愛講堂 台中市潭子區豐興路一段88號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"central", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-07-16", title:"臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略(南區-醫院推薦場) -高醫岡山醫院", location:"高雄醫學大學附設高醫岡山醫院11樓第一會議室", credits:{nurse:7}, cat:"pro", src:"nuna", online:false, region:"south", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
+  {date:"2026-07-18", title:"2026預防手術部位感染與病人安全工作坊", location:"台灣手術全期護理學會", credits:{}, cat:"pro", src:"perio", online:false, region:"other", ctext:"精選公告，詳見學會", url:"https://www.torna.org.tw/"},
   {date:"2026-07-23", title:"「住院整合照護服務品質與人力運用效益研析暨輔導計畫」期末成果發表會 -實體場", location:"台大兒醫大樓B1講堂 臺北市中正區中山南路8號", credits:{nurse:3.8}, cat:"pro", src:"nuna", online:false, region:"north", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-07-23", title:"115年「護理倫理暨法律研討會」 -北區(實體場)", location:"亞東紀念醫院南棟14樓國際會議廳 新北市板橋區南雅南路二段21號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:false, region:"north", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-07-23", title:"115年「護理倫理暨法律研討會」 -東區(視訊場，仍須至指定教室上課)", location:"門諾醫院恩慈樓4樓401會議室 花蓮縣花蓮市民權路44號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:true, region:"east", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-07-23", title:"115年「護理倫理暨法律研討會」 -金門區(視訊場，仍須至指定教室上課)", location:"衛生福利部金門醫院8樓視訊會議室 金門縣金湖鎮復興路2號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:true, region:"other", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-07-23", title:"115年「護理倫理暨法律研討會」 -澎湖區(視訊場，仍須至指定教室上課)", location:"三軍總醫院澎湖分院EMT教室(舊院區二樓訓練教室） 澎湖縣馬公市前寮里90號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:true, region:"other", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-07-23", title:"115年「護理倫理暨法律研討會」 -連江區(視訊場，仍須至指定教室上課)", location:"連江縣立醫院3樓講堂 連江縣南竿鄉復興村217號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:true, region:"other", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
+  {date:"2026-07-23", title:"115年度急重症護理繼續教育視訊直播講座(五)災難護理", location:"中華民國急重症護理學會（線上直播）", credits:{nurse:3}, cat:"pro", src:"critical", online:true, region:"online", ctext:"", url:"https://www.taccn.org.tw/activity/detail/410"},
   {date:"2026-07-24", title:"護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(一)", location:"永和耕莘醫院住院大樓12樓國際會議廳 新北市永和區中興街80號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"north", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-07-29", title:"法官保留制度下探討強制住院精神照護權益研習會", location:"中華民國精神衛生護理學會", credits:{}, cat:"law", src:"psy", online:false, region:"other", ctext:"積分依主辦公告", url:"https://www.psynurse.org.tw/news.aspx"},
   {date:"2026-07-31", title:"護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場", location:"台中慈濟醫院感恩樓5樓階梯教室 台中市潭子區豐興路一段88號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"central", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-08-05", title:"115年「護理倫理暨法律研討會」 -南區(實體場)", location:"高雄醫學大學附設中和紀念醫院啟川大樓6樓第一講堂 高雄市三民區自由一路100號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:false, region:"south", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-08-05", title:"護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(二)", location:"林口長庚紀念醫院醫學大樓第二會議廳 桃園市龜山區復興街5號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"north", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-08-19", title:"115年「護理倫理暨法律研討會」 -中區(實體場)", location:"彰化基督教醫院教學研究大樓12樓蘭大衛國際會議廳 彰化市旭光路235號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:false, region:"central", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
+  {date:"2026-08-21", title:"115年度急重症護理繼續教育視訊直播講座(六)急重症器官衰竭照護", location:"中華民國急重症護理學會（線上直播）", credits:{nurse:3}, cat:"pro", src:"critical", online:true, region:"online", ctext:"", url:"https://www.taccn.org.tw/activity/detail/413"},
+  {date:"2026-09-04", title:"將於115年9月4日舉辦115年度第12次醫療器材專業人員手術病人安全研習會(新學員及補學分課程)，", location:"台灣手術全期護理學會", credits:{}, cat:"pro", src:"perio", online:false, region:"other", ctext:"精選公告，詳見學會", url:"https://www.torna.org.tw/"},
   {date:"2026-09-08", title:"臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略 (北區) -亞東醫院", location:"亞東醫院國際會議廳 新北市板橋區南雅南路二段21號（南棟14樓）", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"north", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-09-09", title:"護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -南部場", location:"高雄醫學大學附設中和紀念醫院啟川大樓6樓第二講堂 高雄市三民區自由一路100號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"south", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
+  {date:"2026-09-10", title:"115年度急重症CKRT照護研習會(北區)", location:"中華民國急重症護理學會", credits:{nurse:6}, cat:"pro", src:"critical", online:false, region:"north", ctext:"", url:"https://www.taccn.org.tw/activity/detail/415"},
+  {date:"2026-09-24", title:"115年外傷護理繼續教育線上直播研習會(三)", location:"中華民國急重症護理學會（線上直播）", credits:{nurse:6}, cat:"pro", src:"critical", online:true, region:"online", ctext:"", url:"https://www.taccn.org.tw/activity/detail/419"},
   {date:"2026-12-31", title:"酸鹼不平衡與動脈氣體分析 線上課程PART1", location:"台灣麻醉專科護理學會 / 線上影像學習課程", credits:{nurse:1, anes:1}, cat:"pro", src:"tana", online:true, region:"online", ctext:"線上隨選課程，年底前完成", url:"https://www.tana.org.tw/ecu/vedio_list.asp", ondemand:true},
   {date:"2026-12-31", title:"酸鹼不平衡與動脈氣體分析 線上課程PART2", location:"台灣麻醉專科護理學會 / 線上影像學習課程", credits:{nurse:1, anes:1}, cat:"pro", src:"tana", online:true, region:"online", ctext:"線上隨選課程，年底前完成", url:"https://www.tana.org.tw/ecu/vedio_list.asp", ondemand:true},
   {date:"2026-12-31", title:"酸鹼不平衡與動脈氣體分析 線上課程PART3", location:"台灣麻醉專科護理學會 / 線上影像學習課程", credits:{nurse:1, anes:1}, cat:"pro", src:"tana", online:true, region:"online", ctext:"線上隨選課程，年底前完成", url:"https://www.tana.org.tw/ecu/vedio_list.asp", ondemand:true},

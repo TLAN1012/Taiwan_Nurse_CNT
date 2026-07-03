@@ -233,6 +233,137 @@ def scrape_psy():
     return out
 
 
+def _slash_roc(s: str):
+    """民國斜線日期 115/9/4 -> 2026-09-04。"""
+    m = re.search(r"(1[01][0-9])/(\d{1,2})/(\d{1,2})", s)
+    if not m:
+        return None
+    return f"{int(m.group(1))+1911:04d}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+
+
+# ---------------------------------------------------------------------------
+# 中華民國急重症護理學會（taccn）── 教育訓練課程（公開，含日期與積分）
+# ---------------------------------------------------------------------------
+def _region_from_zone(title: str):
+    for kw, rg in (("北區", "north"), ("中區", "central"), ("南區", "south"), ("東區", "east")):
+        if kw in title:
+            return rg
+    return None
+
+
+def scrape_critical():
+    html = _fetch("https://www.taccn.org.tw/activity/list/2")
+    if not html:
+        return []
+    soup = _soup(html)
+    seen = {}
+    for a in soup.find_all("a", href=True):
+        m = re.search(r"/activity/detail/(\d+)", a["href"])
+        title = " ".join(a.get_text().split())
+        if m and len(title) >= 6:
+            seen.setdefault(m.group(1), title)
+    out = []
+    for aid, title in seen.items():
+        d_html = _fetch(f"https://www.taccn.org.tw/activity/detail/{aid}")
+        if not d_html:
+            continue
+        body = " ".join(_soup(d_html).get_text().split())
+        dm = re.search(r"20\d{2}-\d{2}-\d{2}", body)
+        if not dm:
+            continue
+        d = dm.group()
+        o = _ordinal(d)
+        if o is None or o < CUTOFF:
+            continue
+        credits = {}
+        cm = re.search(r"專師\s*(\d+(?:\.\d+)?)", body)
+        if cm:
+            credits["np"] = _num(float(cm.group(1)))
+        cm = re.search(r"(?:護理師[／/]?護士\s*|積分\s*)(\d+(?:\.\d+)?)", body)
+        if cm:
+            credits["nurse"] = _num(float(cm.group(1)))
+        online = is_online(title + " " + body[:200])
+        cat = "law" if re.search(r"倫理|法規|法律", title) else "pro"
+        region = "online" if online else (_region_from_zone(title) or "other")
+        out.append({
+            "date": d, "title": title,
+            "location": "中華民國急重症護理學會" + ("（線上直播）" if online else ""),
+            "credits": credits, "cat": cat, "src": "critical", "online": online,
+            "region": region, "ctext": "",
+            "url": f"https://www.taccn.org.tw/activity/detail/{aid}",
+        })
+    return out
+
+
+# ---------------------------------------------------------------------------
+# 台灣手術全期護理學會（torna）── 首頁公開公告之精選課程（完整課表需登入）
+# ---------------------------------------------------------------------------
+def scrape_perio():
+    html = _fetch("https://www.torna.org.tw/")
+    if not html:
+        return []
+    soup = _soup(html)
+    out, seen = [], set()
+    for el in soup.find_all(["a", "li", "p"]):
+        t = " ".join(el.get_text().split())
+        if len(t) > 120 or not re.search(r"(研習|課程|訓練|開課|舉辦|手術|安全)", t):
+            continue
+        d = _roc_to_date(t) or _slash_roc(t)
+        if not d:
+            continue
+        o = _ordinal(d)
+        if o is None or o < CUTOFF:
+            continue
+        qm = re.search(r"「([^」]{4,45})」", t)   # 優先取「」內課程名稱
+        if qm:
+            title = qm.group(1)
+        else:
+            title = re.sub(r"^.*?(舉辦|辦理|開課預告[:：]?)", "", t).strip()[:50] or t[:50]
+        key = (d, title[:12])
+        if not title or key in seen:
+            continue
+        seen.add(key)
+        online = is_online(t)
+        out.append({
+            "date": d, "title": title, "location": "台灣手術全期護理學會",
+            "credits": {}, "cat": "pro", "src": "perio", "online": online,
+            "region": "online" if online else "other",
+            "ctext": "精選公告，詳見學會", "url": "https://www.torna.org.tw/",
+        })
+    return out
+
+
+# ---------------------------------------------------------------------------
+# 中華民國助產師助產士公會全聯會（midwife）── 公開消息之精選研習（完整需登入）
+# ---------------------------------------------------------------------------
+def scrape_midwife():
+    out = []
+    for url in ("http://www.midwifery.org.tw/modules/Content/C226.html",
+                "http://www.midwifery.org.tw/modules/Content/C229.html"):
+        html = _fetch(url)
+        if not html:
+            continue
+        for el in _soup(html).find_all(["a", "li", "p", "tr"]):
+            t = " ".join(el.get_text().split())
+            if len(t) > 120 or not re.search(r"(研習|課程|繼續教育|講習|訓練)", t):
+                continue
+            d = _roc_to_date(t) or _slash_roc(t)
+            if not d or (_ordinal(d) or 0) < CUTOFF:
+                continue
+            online = is_online(t)
+            out.append({
+                "date": d, "title": t[:50],
+                "location": "中華民國助產師助產士公會全聯會",
+                "credits": {}, "cat": "pro", "src": "midwife", "online": online,
+                "region": "online" if online else "other",
+                "ctext": "精選公告，詳見學會", "url": url,
+            })
+    uniq = {}
+    for e in out:
+        uniq[(e["date"], e["title"][:12])] = e
+    return list(uniq.values())
+
+
 def _num(v):
     return int(v) if float(v).is_integer() else round(float(v), 1)
 
@@ -242,6 +373,9 @@ SCRAPERS = {
     "nuna": scrape_nuna,
     "tana": scrape_tana,
     "psy": scrape_psy,
+    "critical": scrape_critical,
+    "perio": scrape_perio,
+    "midwife": scrape_midwife,
 }
 
 
