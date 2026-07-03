@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "note": "護理繼續教育積分課程資料檔。scripts/build.py 會讀取本檔並注入 index.html。目前為範例資料，請由 scripts/ 內的爬蟲或人工填入真實課程。",
+    "disclaimer": "實際課程、日期、學分數與適用積分別，一律以各主辦公會／學會之官方公告為準。",
+    "credit_types": {
+      "nurse": "護理師/護士繼續教育積分（執業執照更新，6年120點）",
+      "np": "專科護理師積分（證書效期展延）",
+      "anes": "麻醉專科護理積分（台灣麻醉專科護理學會）",
+      "ltc": "長期照顧繼續教育積分",
+      "midwife": "助產師/助產士繼續教育積分"
+    },
+    "categories": {
+      "pro": "專業課程",
+      "quality": "專業品質（含感染管制）",
+      "ethics": "專業倫理（含性別議題、醫學倫理、多元文化）",
+      "law": "專業法規",
+      "other": "其他"
+    }
+  },
+  "events": [
+    {"date": "2026-07-05", "title": "115年麻醉護理臨床實務研討會 — 動脈血氣體分析與酸鹼平衡", "location": "台灣麻醉專科護理學會 / 台大醫院國際會議中心", "credits": {"anes": 6, "nurse": 6}, "cat": "pro", "src": "tana", "online": false, "region": "north", "ctext": "", "url": "https://www.tana.org.tw/"},
+    {"date": "2026-07-08", "title": "專科護理師處方權與醫療法規更新研習", "location": "台灣專科護理師學會 / 線上直播", "credits": {"np": 3, "nurse": 3}, "cat": "law", "src": "tnpa", "online": true, "region": "online", "ctext": "專業法規 3 點", "url": "https://www.tnpa.org.tw/"},
+    {"date": "2026-07-11", "title": "醫療照護相關感染管制實務(含手部衛生查核)", "location": "台灣護理學會 / 台中榮民總醫院", "credits": {"nurse": 3}, "cat": "quality", "src": "twna", "online": false, "region": "central", "ctext": "含感染管制 3 點", "url": "https://www.twna.org.tw/"},
+    {"date": "2026-07-12", "title": "護理人員性別友善與多元文化照護工作坊", "location": "高雄市護理師護士公會 / 高雄長庚醫院", "credits": {"nurse": 2}, "cat": "ethics", "src": "local", "online": false, "region": "south", "ctext": "含性別議題 2 點", "url": "https://www.nurse.org.tw/"},
+    {"date": "2026-07-15", "title": "重症病人血流動力學監測與呼吸器照護", "location": "台灣急重症護理學會 / 成大醫院", "credits": {"nurse": 6, "np": 6}, "cat": "pro", "src": "critical", "online": false, "region": "south", "ctext": "", "url": "https://www.tanem.org.tw/"},
+    {"date": "2026-07-18", "title": "2026腫瘤護理個案管理與症狀處置研討會", "location": "中華民國腫瘤護理學會 / 台北馬偕醫院", "credits": {"nurse": 6, "np": 5}, "cat": "pro", "src": "onco", "online": false, "region": "north", "ctext": "", "url": "https://www.twna-oncology.org.tw/"},
+    {"date": "2026-07-19", "title": "長期照顧專業人員 Level II 繼續教育課程", "location": "台灣醫療繼續教育推廣學會 / 線上課程", "credits": {"ltc": 6, "nurse": 6}, "cat": "pro", "src": "tmcs", "online": true, "region": "online", "ctext": "長照專業課程 6 點", "url": "http://www.tmcs-edu.org.tw/"},
+    {"date": "2026-07-22", "title": "手術全期病人安全與器械管理實務", "location": "台灣手術全期護理學會 / 林口長庚醫院", "credits": {"nurse": 6}, "cat": "pro", "src": "perio", "online": false, "region": "north", "ctext": "", "url": "https://www.aorn.org.tw/"},
+    {"date": "2026-07-25", "title": "精神科病人約束與病人自主權利法倫理研討", "location": "中華民國精神衛生護理學會 / 花蓮玉里醫院", "credits": {"nurse": 3}, "cat": "ethics", "src": "psy", "online": false, "region": "east", "ctext": "含醫學倫理 3 點", "url": "https://www.psynurse.org.tw/"},
+    {"date": "2026-07-26", "title": "麻醉恢復室(PACU)常見併發症辨識與處置", "location": "台灣麻醉專科護理學會 / 線上影像課程", "credits": {"anes": 2, "nurse": 2, "np": 2}, "cat": "pro", "src": "tana", "online": true, "region": "online", "ctext": "", "url": "https://www.tana.org.tw/ecu/vedio_list.asp"},
+    {"date": "2026-07-30", "title": "助產師接生技術與新生兒即時照護更新", "location": "中華民國助產師助產士公會全聯會 / 台北", "credits": {"midwife": 6, "nurse": 6}, "cat": "pro", "src": "midwife", "online": false, "region": "north", "ctext": "", "url": "http://www.midwifery.org.tw/"},
+    {"date": "2026-08-02", "title": "糖尿病衛教與慢性病共病照護實務", "location": "台灣護理學會 / 彰化基督教醫院", "credits": {"nurse": 6}, "cat": "pro", "src": "twna", "online": false, "region": "central", "ctext": "", "url": "https://www.twna.org.tw/"},
+    {"date": "2026-08-05", "title": "醫事人員法規與病歷書寫規範研習", "location": "護理師護士公會全國聯合會 / 線上", "credits": {"nurse": 2, "np": 2}, "cat": "law", "src": "nuna", "online": true, "region": "online", "ctext": "專業法規 2 點", "url": "https://www.nurse.org.tw/"},
+    {"date": "2026-08-08", "title": "急重症專科護理師進階評估與臨床決策", "location": "台灣專科護理師學會 / 台中中國附醫", "credits": {"np": 6, "nurse": 6}, "cat": "pro", "src": "tnpa", "online": false, "region": "central", "ctext": "", "url": "https://www.tnpa.org.tw/"},
+    {"date": "2026-08-12", "title": "醫療品質與病人安全(TRM團隊資源管理)", "location": "台灣護理學會 / 高雄醫學大學附設醫院", "credits": {"nurse": 3, "np": 3}, "cat": "quality", "src": "twna", "online": false, "region": "south", "ctext": "含病人安全 3 點", "url": "https://www.twna.org.tw/"},
+    {"date": "2026-08-15", "title": "婦產科護理 — 高危妊娠與產後出血照護", "location": "台灣婦產科護理學會 / 台北", "credits": {"nurse": 6}, "cat": "pro", "src": "ob", "online": false, "region": "north", "ctext": "", "url": "https://www.twaogn.org.tw/"},
+    {"date": "2026-08-20", "title": "麻醉專科護理師術前評估與困難氣道處置", "location": "台灣麻醉專科護理學會 / 台中榮總", "credits": {"anes": 6, "np": 6, "nurse": 6}, "cat": "pro", "src": "tana", "online": false, "region": "central", "ctext": "", "url": "https://www.tana.org.tw/"},
+    {"date": "2026-08-23", "title": "長照機構感染管制與群聚事件應變", "location": "台灣醫療繼續教育推廣學會 / 線上", "credits": {"ltc": 3, "nurse": 3}, "cat": "quality", "src": "tmcs", "online": true, "region": "online", "ctext": "含感染管制 3 點", "url": "http://www.tmcs-edu.org.tw/"},
+    {"date": "2026-08-28", "title": "安寧緩和療護與生命末期倫理決策", "location": "中華民國精神衛生護理學會 / 台南奇美醫院", "credits": {"nurse": 3}, "cat": "ethics", "src": "psy", "online": false, "region": "south", "ctext": "含醫學倫理 3 點", "url": "https://www.psynurse.org.tw/"},
+    {"date": "2026-09-03", "title": "2026腫瘤護理年會 — 免疫治療與標靶照護新知", "location": "中華民國腫瘤護理學會 / 台北國際會議中心", "credits": {"nurse": 8, "np": 8}, "cat": "pro", "src": "onco", "online": false, "region": "north", "ctext": "", "url": "https://www.twna-oncology.org.tw/"},
+    {"date": "2026-09-06", "title": "兒科急重症與新生兒高級救命術(NRP)", "location": "台灣急重症護理學會 / 線上直播", "credits": {"nurse": 4, "np": 4}, "cat": "pro", "src": "critical", "online": true, "region": "online", "ctext": "", "url": "https://www.tanem.org.tw/"},
+    {"date": "2026-09-10", "title": "手術室護理人員放射安全與職業健康法規", "location": "台灣手術全期護理學會 / 台中", "credits": {"nurse": 2}, "cat": "law", "src": "perio", "online": false, "region": "central", "ctext": "專業法規 2 點", "url": "https://www.aorn.org.tw/"},
+    {"date": "2026-09-13", "title": "花東地區偏鄉護理與社區長照整合照護", "location": "台東縣護理師護士公會 / 台東馬偕", "credits": {"nurse": 6, "ltc": 6}, "cat": "pro", "src": "local", "online": false, "region": "east", "ctext": "", "url": "https://www.nurse.org.tw/"},
+    {"date": "2026-09-18", "title": "專科護理師實證護理與臨床指引應用", "location": "台灣專科護理師學會 / 線上", "credits": {"np": 6, "nurse": 6}, "cat": "pro", "src": "tnpa", "online": true, "region": "online", "ctext": "", "url": "https://www.tnpa.org.tw/"},
+    {"date": "2026-09-24", "title": "助產師產前衛教與性別友善照護研習", "location": "中華民國助產師助產士公會全聯會 / 線上", "credits": {"midwife": 2, "nurse": 2}, "cat": "ethics", "src": "midwife", "online": true, "region": "online", "ctext": "含性別議題 2 點", "url": "http://www.midwifery.org.tw/"},
+    {"date": "2026-09-27", "title": "麻醉照護品質指標與不良事件通報實務", "location": "台灣麻醉專科護理學會 / 高雄", "credits": {"anes": 3, "nurse": 3}, "cat": "quality", "src": "tana", "online": false, "region": "south", "ctext": "含病人安全 3 點", "url": "https://www.tana.org.tw/"},
+    {"date": "2026-10-04", "title": "115年度基層護理繼續教育綜合研習(北區場)", "location": "護理師護士公會全國聯合會 / 台北", "credits": {"nurse": 6}, "cat": "pro", "src": "nuna", "online": false, "region": "north", "ctext": "", "url": "https://www.nurse.org.tw/"},
+    {"date": "2026-10-09", "title": "長期照顧個案管理與跨專業團隊合作", "location": "台灣醫療繼續教育推廣學會 / 台中", "credits": {"ltc": 6, "nurse": 6}, "cat": "pro", "src": "tmcs", "online": false, "region": "central", "ctext": "", "url": "http://www.tmcs-edu.org.tw/"},
+    {"date": "2026-10-15", "title": "婦產科護理感染管制與周產期安全", "location": "台灣婦產科護理學會 / 線上", "credits": {"nurse": 3}, "cat": "quality", "src": "ob", "online": true, "region": "online", "ctext": "含感染管制 3 點", "url": "https://www.twaogn.org.tw/"}
+  ]
+}

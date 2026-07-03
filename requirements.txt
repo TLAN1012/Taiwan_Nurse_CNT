@@ -1,0 +1,3 @@
+# 自動更新腳本所需套件（僅爬蟲需要；build.py 只用標準庫）
+requests>=2.31
+beautifulsoup4>=4.12

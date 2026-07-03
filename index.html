@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>護理繼續教育積分課程全集 | 各護理公會/學會積分課程聚合</title>
+<meta name="description" content="聚合台灣各護理公會、學會的繼續教育積分課程，涵蓋護理師/護士、專科護理師、麻醉專科護理、長期照顧等不同積分別，支援積分類別、來源、區域篩選。">
+<style>
+  :root{
+    /* 主色（護理識別：青綠系，與神經學藍色系區隔） */
+    --p1:#00695c; --p2:#00897b; --p3:#26a69a; --p-hover:#004d40;
+    /* 積分別代表色 */
+    --c-nurse:#00897b;   /* 護理師/護士 */
+    --c-np:#3949ab;      /* 專科護理師 */
+    --c-anes:#8e24aa;    /* 麻醉專科護理 */
+    --c-ltc:#f9a825;     /* 長期照顧 */
+    --c-midwife:#d81b60; /* 助產師 */
+    /* 中性色 */
+    --bg:#eef1f2; --card:#fff; --tx:#222; --tx2:#555; --tx3:#888;
+    --bd:#e2e6e8;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Segoe UI','PingFang TC','Noto Sans TC','Microsoft JhengHei',sans-serif;
+    background:var(--bg); color:var(--tx); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none}
+
+  /* ===== Header ===== */
+  header{
+    background:linear-gradient(135deg,var(--p1) 0%,var(--p2) 50%,var(--p3) 100%);
+    color:#fff; padding:26px 20px 22px; text-align:center;
+    box-shadow:0 2px 14px rgba(0,0,0,.15);
+  }
+  header h1{font-size:1.85em; font-weight:700; letter-spacing:.5px}
+  header .sub{margin-top:6px; font-size:.95em; opacity:.92}
+  header .badges{margin-top:12px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap}
+  header .badges span{
+    background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px; border-radius:20px; font-size:.82em; backdrop-filter:blur(4px);
+  }
+
+  /* ===== 範例資料提示 ===== */
+  .notice{
+    max-width:1180px; margin:14px auto 0; padding:10px 16px;
+    background:#fff8e1; border:1px solid #ffe082; border-radius:10px;
+    color:#7a5c00; font-size:.86em; line-height:1.6;
+  }
+  .notice b{color:#5d4600}
+
+  /* ===== 篩選區 ===== */
+  .filters{max-width:1180px; margin:14px auto 0; padding:0 16px}
+  .bar{display:flex; gap:10px; align-items:center; margin-bottom:12px; flex-wrap:wrap}
+  #search{
+    flex:1; min-width:220px; padding:11px 16px; border:2px solid var(--bd);
+    border-radius:26px; font-size:.95em; outline:none; transition:border-color .2s; background:#fff;
+  }
+  #search:focus{border-color:var(--p2)}
+  #sort{
+    padding:11px 16px; border:2px solid var(--bd); border-radius:26px;
+    font-size:.9em; background:#fff; outline:none; cursor:pointer;
+  }
+  .pill-row{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; align-items:center}
+  .pill-label{
+    font-size:.8em; color:var(--tx3); font-weight:700; margin-right:2px;
+    min-width:58px; letter-spacing:.5px;
+  }
+  .pill{
+    padding:6px 14px; border:2px solid var(--bd); border-radius:22px;
+    font-size:.84em; background:#fff; cursor:pointer; transition:all .18s; white-space:nowrap;
+    color:var(--tx2);
+  }
+  .pill:hover{border-color:var(--p3); color:var(--p1)}
+  .pill.active{background:var(--p2); border-color:var(--p2); color:#fff}
+  /* 積分別 pill 選中時用各自代表色 */
+  .pill.credit[data-credit="nurse"].active{background:var(--c-nurse);border-color:var(--c-nurse)}
+  .pill.credit[data-credit="np"].active{background:var(--c-np);border-color:var(--c-np)}
+  .pill.credit[data-credit="anes"].active{background:var(--c-anes);border-color:var(--c-anes)}
+  .pill.credit[data-credit="ltc"].active{background:var(--c-ltc);border-color:var(--c-ltc);color:#3a2c00}
+  .pill.credit[data-credit="midwife"].active{background:var(--c-midwife);border-color:var(--c-midwife)}
+
+  .stats{max-width:1180px; margin:2px auto 0; padding:0 16px; color:var(--tx3); font-size:.85em}
+  .stats b{color:var(--p1)}
+
+  /* ===== 課程卡片 ===== */
+  .grid{
+    max-width:1180px; margin:14px auto 40px; padding:0 16px;
+    display:grid; grid-template-columns:repeat(auto-fill,minmax(360px,1fr)); gap:16px;
+  }
+  .card{
+    background:var(--card); border-radius:12px; padding:16px 18px 14px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08); border-left:5px solid var(--tx3);
+    display:flex; flex-direction:column; transition:transform .15s, box-shadow .15s;
+  }
+  .card:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.12)}
+  .card.cat-pro{border-left-color:#00897b}
+  .card.cat-quality{border-left-color:#1565c0}
+  .card.cat-ethics{border-left-color:#6a1b9a}
+  .card.cat-law{border-left-color:#ad1457}
+  .card.cat-other{border-left-color:#78909c}
+
+  .card .d-row{display:flex; align-items:baseline; gap:8px; flex-wrap:wrap; margin-bottom:6px}
+  .card .date{font-size:.92em; font-weight:700; color:var(--p1)}
+  .card .wd{font-size:.8em; color:var(--tx3)}
+  .card .left{
+    font-size:.74em; padding:2px 8px; border-radius:12px; font-weight:700;
+    background:#e0f2f1; color:#00695c;
+  }
+  .card .left.soon{background:#ffebee; color:#c62828}
+  .card .left.past{background:#eceff1; color:#90a4ae}
+  .card h3{font-size:1.02em; font-weight:700; margin:2px 0 10px; line-height:1.4}
+
+  .tags{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
+  .tag{font-size:.75em; padding:3px 9px; border-radius:12px; font-weight:600}
+  .tag.credit{color:#fff}
+  .tag.credit.nurse{background:var(--c-nurse)}
+  .tag.credit.np{background:var(--c-np)}
+  .tag.credit.anes{background:var(--c-anes)}
+  .tag.credit.ltc{background:var(--c-ltc); color:#3a2c00}
+  .tag.credit.midwife{background:var(--c-midwife)}
+  .tag.cat{background:#f1f3f4; color:#444}
+  .tag.region{background:#eceff1; color:#455a64}
+  .tag.src{background:#e8f5e9; color:#2e7d32}
+  .tag.online{background:#e3f2fd; color:#1565c0}
+  .tag.note{background:#fff3e0; color:#e65100}
+
+  .card .loc{font-size:.85em; color:var(--tx2); margin-bottom:12px; display:flex; gap:5px; align-items:flex-start}
+  .card .actions{margin-top:auto; display:flex; gap:8px; flex-wrap:wrap}
+  .card .btn{
+    font-size:.82em; padding:7px 13px; border-radius:20px; font-weight:600;
+    border:1.5px solid var(--p2); color:var(--p1); background:#fff; transition:all .18s;
+  }
+  .card .btn:hover{background:var(--p2); color:#fff}
+  .card .btn.gcal{border-color:#d0d0d0; color:#555}
+  .card .btn.gcal:hover{background:#4285f4; border-color:#4285f4; color:#fff}
+
+  .empty{grid-column:1/-1; text-align:center; padding:60px 20px; color:var(--tx3)}
+
+  footer{
+    text-align:center; padding:22px 16px 40px; color:var(--tx3); font-size:.8em; line-height:1.8;
+    border-top:1px solid var(--bd); max-width:1180px; margin:0 auto;
+  }
+  footer a{color:var(--p1); text-decoration:underline}
+
+  @media(max-width:600px){
+    header h1{font-size:1.4em}
+    .grid{grid-template-columns:1fr}
+    .pill-label{min-width:100%; margin-bottom:2px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>🩺 護理繼續教育積分課程全集</h1>
+  <div class="sub">聚合各護理公會 / 學會的繼續教育積分課程 — 一次看清不同積分別、類別與來源</div>
+  <div class="badges">
+    <span id="b-range">📅 課程期間</span>
+    <span id="b-count">📚 共 0 筆</span>
+    <span>🔄 每週日 15:00 自動更新</span>
+  </div>
+</header>
+
+<div class="notice">
+  <b>ℹ️ 資料說明：</b>本頁目前為<b>範例資料（Demo）</b>，用於展示聚合架構與不同積分別的呈現方式。實際課程、日期、學分數與適用積分別，<b>一律以各主辦公會／學會之官方公告為準</b>。自動更新腳本（<code>scripts/</code>）與資料檔（<code>data/events.json</code>）可用於填入真實課程資料。
+</div>
+
+<div class="filters">
+  <div class="bar">
+    <input id="search" type="text" placeholder="🔍 搜尋課程名稱、主辦單位或地點…">
+    <select id="sort">
+      <option value="date-asc">依日期（近→遠）</option>
+      <option value="date-desc">依日期（遠→近）</option>
+      <option value="credits-desc">依積分（高→低）</option>
+    </select>
+  </div>
+
+  <div class="pill-row" id="credit-pills">
+    <span class="pill-label">積分別</span>
+    <button class="pill active" data-credit="all">全部</button>
+    <button class="pill credit" data-credit="nurse">護理師/護士</button>
+    <button class="pill credit" data-credit="np">專科護理師</button>
+    <button class="pill credit" data-credit="anes">麻醉專科護理</button>
+    <button class="pill credit" data-credit="ltc">長期照顧</button>
+    <button class="pill credit" data-credit="midwife">助產師</button>
+  </div>
+
+  <div class="pill-row" id="cat-pills">
+    <span class="pill-label">積分類別</span>
+    <button class="pill active" data-cat="all">全部</button>
+    <button class="pill" data-cat="pro">專業課程</button>
+    <button class="pill" data-cat="quality">專業品質</button>
+    <button class="pill" data-cat="ethics">專業倫理</button>
+    <button class="pill" data-cat="law">專業法規</button>
+    <button class="pill" data-cat="other">其他</button>
+  </div>
+
+  <div class="pill-row" id="region-pills">
+    <span class="pill-label">區域</span>
+    <button class="pill active" data-region="all">全部</button>
+    <button class="pill" data-region="north">🏙️ 北部</button>
+    <button class="pill" data-region="central">🏔️ 中部</button>
+    <button class="pill" data-region="south">🌊 南部</button>
+    <button class="pill" data-region="east">🌿 東部</button>
+    <button class="pill" data-region="online">💻 線上</button>
+    <button class="pill" data-region="other">❓ 其他</button>
+  </div>
+
+  <div class="pill-row" id="src-pills">
+    <span class="pill-label">來源</span>
+    <button class="pill active" data-src="all">全部</button>
+    <!-- 來源 pill 由 JS 依 SRC_LABELS 產生 -->
+  </div>
+</div>
+
+<div class="stats">顯示 <b id="show-n">0</b> / <span id="total-n">0</span> 筆課程</div>
+
+<div class="grid" id="grid"></div>
+
+<footer>
+  本站為便民查詢工具，課程資料著作權屬各主辦單位所有。實際場地、學分數與積分別以主辦公會／學會公告為準。<br>
+  參考架構：<a href="https://tlan1012.github.io/Taiwan_Neurology/" target="_blank">基層神經科醫師教育活動全集</a>　·
+  積分制度依據：<a href="https://law.moj.gov.tw/LawClass/LawAll.aspx?PCode=L0020181" target="_blank">醫事人員執業登記及繼續教育辦法</a>
+</footer>
+
+<script>
+/* ============================================================
+   設定：來源、積分別、類別、區域標籤
+   ============================================================ */
+const SRC_LABELS = {
+  nuna:    '護理師護士公會全聯會',
+  twna:    '台灣護理學會',
+  tnpa:    '台灣專科護理師學會',
+  tana:    '台灣麻醉專科護理學會',
+  tmcs:    '台灣醫療繼續教育推廣學會',
+  psy:     '精神衛生護理學會',
+  onco:    '腫瘤護理學會',
+  perio:   '手術全期護理學會',
+  critical:'急重症護理學會',
+  ob:      '婦產科護理學會',
+  midwife: '助產師公會全聯會',
+  local:   '各縣市護理師護士公會',
+  other:   '其他單位'
+};
+// 各來源官方網站（點「主辦單位」可連往）
+const SRC_URL = {
+  nuna:'https://www.nurse.org.tw/', twna:'https://www.twna.org.tw/',
+  tnpa:'https://www.tnpa.org.tw/', tana:'https://www.tana.org.tw/',
+  tmcs:'http://www.tmcs-edu.org.tw/', psy:'https://www.psynurse.org.tw/',
+  onco:'https://www.twna-oncology.org.tw/', perio:'https://www.aorn.org.tw/',
+  critical:'https://www.tanem.org.tw/', ob:'https://www.twaogn.org.tw/',
+  midwife:'http://www.midwifery.org.tw/', local:'', other:''
+};
+
+// 積分別（可多重）— 護理課程最重要的區隔維度
+const CREDIT_LABELS = { nurse:'護理師/護士', np:'專科護理師', anes:'麻醉專科護理', ltc:'長期照顧', midwife:'助產師' };
+const CREDIT_SHORT  = { nurse:'護理', np:'專師', anes:'麻醉', ltc:'長照', midwife:'助產' };
+const CREDIT_ORDER  = ['nurse','np','anes','ltc','midwife'];
+
+// 積分類別（衛福部繼續教育四大類別）
+const CAT_LABELS = { pro:'專業課程', quality:'專業品質', ethics:'專業倫理', law:'專業法規', other:'其他' };
+
+const REGION_LABELS = { north:'🏙️ 北部', central:'🏔️ 中部', south:'🌊 南部', east:'🌿 東部', online:'💻 線上', other:'❓ 其他' };
+
+/* ============================================================
+   課程資料（範例）
+   欄位說明：
+     date     課程日期 YYYY-MM-DD
+     title    課程名稱
+     location 地點 / 主辦
+     credits  各積分別點數物件，例如 {nurse:6, np:6}
+     cat      積分類別 pro|quality|ethics|law|other
+     src      來源代碼（對應 SRC_LABELS）
+     online   是否線上
+     region   north|central|south|east|online|other
+     ctext    積分備註（例：含感染管制1點、含性別議題1點）
+     url      詳細資訊連結
+   ============================================================ */
+/* EVENTS:START — 此區塊由 scripts/build.py 依 data/events.json 自動產生，可手動編輯作為預設範例 */
+const EVENTS = [
+  {date:"2026-07-05", title:"115年麻醉護理臨床實務研討會 — 動脈血氣體分析與酸鹼平衡", location:"台灣麻醉專科護理學會 / 台大醫院國際會議中心", credits:{nurse:6, anes:6}, cat:"pro", src:"tana", online:false, region:"north", ctext:"", url:"https://www.tana.org.tw/"},
+  {date:"2026-07-08", title:"專科護理師處方權與醫療法規更新研習", location:"台灣專科護理師學會 / 線上直播", credits:{nurse:3, np:3}, cat:"law", src:"tnpa", online:true, region:"online", ctext:"專業法規 3 點", url:"https://www.tnpa.org.tw/"},
+  {date:"2026-07-11", title:"醫療照護相關感染管制實務(含手部衛生查核)", location:"台灣護理學會 / 台中榮民總醫院", credits:{nurse:3}, cat:"quality", src:"twna", online:false, region:"central", ctext:"含感染管制 3 點", url:"https://www.twna.org.tw/"},
+  {date:"2026-07-12", title:"護理人員性別友善與多元文化照護工作坊", location:"高雄市護理師護士公會 / 高雄長庚醫院", credits:{nurse:2}, cat:"ethics", src:"local", online:false, region:"south", ctext:"含性別議題 2 點", url:"https://www.nurse.org.tw/"},
+  {date:"2026-07-15", title:"重症病人血流動力學監測與呼吸器照護", location:"台灣急重症護理學會 / 成大醫院", credits:{nurse:6, np:6}, cat:"pro", src:"critical", online:false, region:"south", ctext:"", url:"https://www.tanem.org.tw/"},
+  {date:"2026-07-18", title:"2026腫瘤護理個案管理與症狀處置研討會", location:"中華民國腫瘤護理學會 / 台北馬偕醫院", credits:{nurse:6, np:5}, cat:"pro", src:"onco", online:false, region:"north", ctext:"", url:"https://www.twna-oncology.org.tw/"},
+  {date:"2026-07-19", title:"長期照顧專業人員 Level II 繼續教育課程", location:"台灣醫療繼續教育推廣學會 / 線上課程", credits:{nurse:6, ltc:6}, cat:"pro", src:"tmcs", online:true, region:"online", ctext:"長照專業課程 6 點", url:"http://www.tmcs-edu.org.tw/"},
+  {date:"2026-07-22", title:"手術全期病人安全與器械管理實務", location:"台灣手術全期護理學會 / 林口長庚醫院", credits:{nurse:6}, cat:"pro", src:"perio", online:false, region:"north", ctext:"", url:"https://www.aorn.org.tw/"},
+  {date:"2026-07-25", title:"精神科病人約束與病人自主權利法倫理研討", location:"中華民國精神衛生護理學會 / 花蓮玉里醫院", credits:{nurse:3}, cat:"ethics", src:"psy", online:false, region:"east", ctext:"含醫學倫理 3 點", url:"https://www.psynurse.org.tw/"},
+  {date:"2026-07-26", title:"麻醉恢復室(PACU)常見併發症辨識與處置", location:"台灣麻醉專科護理學會 / 線上影像課程", credits:{nurse:2, np:2, anes:2}, cat:"pro", src:"tana", online:true, region:"online", ctext:"", url:"https://www.tana.org.tw/ecu/vedio_list.asp"},
+  {date:"2026-07-30", title:"助產師接生技術與新生兒即時照護更新", location:"中華民國助產師助產士公會全聯會 / 台北", credits:{nurse:6, midwife:6}, cat:"pro", src:"midwife", online:false, region:"north", ctext:"", url:"http://www.midwifery.org.tw/"},
+  {date:"2026-08-02", title:"糖尿病衛教與慢性病共病照護實務", location:"台灣護理學會 / 彰化基督教醫院", credits:{nurse:6}, cat:"pro", src:"twna", online:false, region:"central", ctext:"", url:"https://www.twna.org.tw/"},
+  {date:"2026-08-05", title:"醫事人員法規與病歷書寫規範研習", location:"護理師護士公會全國聯合會 / 線上", credits:{nurse:2, np:2}, cat:"law", src:"nuna", online:true, region:"online", ctext:"專業法規 2 點", url:"https://www.nurse.org.tw/"},
+  {date:"2026-08-08", title:"急重症專科護理師進階評估與臨床決策", location:"台灣專科護理師學會 / 台中中國附醫", credits:{nurse:6, np:6}, cat:"pro", src:"tnpa", online:false, region:"central", ctext:"", url:"https://www.tnpa.org.tw/"},
+  {date:"2026-08-12", title:"醫療品質與病人安全(TRM團隊資源管理)", location:"台灣護理學會 / 高雄醫學大學附設醫院", credits:{nurse:3, np:3}, cat:"quality", src:"twna", online:false, region:"south", ctext:"含病人安全 3 點", url:"https://www.twna.org.tw/"},
+  {date:"2026-08-15", title:"婦產科護理 — 高危妊娠與產後出血照護", location:"台灣婦產科護理學會 / 台北", credits:{nurse:6}, cat:"pro", src:"ob", online:false, region:"north", ctext:"", url:"https://www.twaogn.org.tw/"},
+  {date:"2026-08-20", title:"麻醉專科護理師術前評估與困難氣道處置", location:"台灣麻醉專科護理學會 / 台中榮總", credits:{nurse:6, np:6, anes:6}, cat:"pro", src:"tana", online:false, region:"central", ctext:"", url:"https://www.tana.org.tw/"},
+  {date:"2026-08-23", title:"長照機構感染管制與群聚事件應變", location:"台灣醫療繼續教育推廣學會 / 線上", credits:{nurse:3, ltc:3}, cat:"quality", src:"tmcs", online:true, region:"online", ctext:"含感染管制 3 點", url:"http://www.tmcs-edu.org.tw/"},
+  {date:"2026-08-28", title:"安寧緩和療護與生命末期倫理決策", location:"中華民國精神衛生護理學會 / 台南奇美醫院", credits:{nurse:3}, cat:"ethics", src:"psy", online:false, region:"south", ctext:"含醫學倫理 3 點", url:"https://www.psynurse.org.tw/"},
+  {date:"2026-09-03", title:"2026腫瘤護理年會 — 免疫治療與標靶照護新知", location:"中華民國腫瘤護理學會 / 台北國際會議中心", credits:{nurse:8, np:8}, cat:"pro", src:"onco", online:false, region:"north", ctext:"", url:"https://www.twna-oncology.org.tw/"},
+  {date:"2026-09-06", title:"兒科急重症與新生兒高級救命術(NRP)", location:"台灣急重症護理學會 / 線上直播", credits:{nurse:4, np:4}, cat:"pro", src:"critical", online:true, region:"online", ctext:"", url:"https://www.tanem.org.tw/"},
+  {date:"2026-09-10", title:"手術室護理人員放射安全與職業健康法規", location:"台灣手術全期護理學會 / 台中", credits:{nurse:2}, cat:"law", src:"perio", online:false, region:"central", ctext:"專業法規 2 點", url:"https://www.aorn.org.tw/"},
+  {date:"2026-09-13", title:"花東地區偏鄉護理與社區長照整合照護", location:"台東縣護理師護士公會 / 台東馬偕", credits:{nurse:6, ltc:6}, cat:"pro", src:"local", online:false, region:"east", ctext:"", url:"https://www.nurse.org.tw/"},
+  {date:"2026-09-18", title:"專科護理師實證護理與臨床指引應用", location:"台灣專科護理師學會 / 線上", credits:{nurse:6, np:6}, cat:"pro", src:"tnpa", online:true, region:"online", ctext:"", url:"https://www.tnpa.org.tw/"},
+  {date:"2026-09-24", title:"助產師產前衛教與性別友善照護研習", location:"中華民國助產師助產士公會全聯會 / 線上", credits:{nurse:2, midwife:2}, cat:"ethics", src:"midwife", online:true, region:"online", ctext:"含性別議題 2 點", url:"http://www.midwifery.org.tw/"},
+  {date:"2026-09-27", title:"麻醉照護品質指標與不良事件通報實務", location:"台灣麻醉專科護理學會 / 高雄", credits:{nurse:3, anes:3}, cat:"quality", src:"tana", online:false, region:"south", ctext:"含病人安全 3 點", url:"https://www.tana.org.tw/"},
+  {date:"2026-10-04", title:"115年度基層護理繼續教育綜合研習(北區場)", location:"護理師護士公會全國聯合會 / 台北", credits:{nurse:6}, cat:"pro", src:"nuna", online:false, region:"north", ctext:"", url:"https://www.nurse.org.tw/"},
+  {date:"2026-10-09", title:"長期照顧個案管理與跨專業團隊合作", location:"台灣醫療繼續教育推廣學會 / 台中", credits:{nurse:6, ltc:6}, cat:"pro", src:"tmcs", online:false, region:"central", ctext:"", url:"http://www.tmcs-edu.org.tw/"},
+  {date:"2026-10-15", title:"婦產科護理感染管制與周產期安全", location:"台灣婦產科護理學會 / 線上", credits:{nurse:3}, cat:"quality", src:"ob", online:true, region:"online", ctext:"含感染管制 3 點", url:"https://www.twaogn.org.tw/"}
+];
+/* EVENTS:END */
+
+/* ============================================================
+   狀態與工具函式
+   ============================================================ */
+const state = { credits:new Set(), cats:new Set(), regions:new Set(), srcs:new Set(), search:'', sort:'date-asc' };
+const WD = ['日','一','二','三','四','五','六'];
+// 以固定「今天」計算剩餘天數（由 scripts/build.py 於每次更新時替換）
+const TODAY = new Date('2026-07-03T00:00:00+08:00'); /* TODAY:AUTO */
+
+function totalCredits(e){ return CREDIT_ORDER.reduce((s,k)=> s + (e.credits[k]||0), 0); }
+function creditKeys(e){ return CREDIT_ORDER.filter(k => (e.credits[k]||0) > 0); }
+function matchRegion(e,r){ return r==='online' ? (e.online || e.region==='online') : e.region===r; }
+function daysLeft(dateStr){
+  const d = new Date(dateStr+'T00:00:00+08:00');
+  return Math.round((d - TODAY)/86400000);
+}
+function esc(s){ return (s||'').replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+/* ============================================================
+   篩選 + 排序
+   ============================================================ */
+function getFiltered(){
+  let data = EVENTS.slice();
+  if(state.credits.size) data = data.filter(e => [...state.credits].some(k => (e.credits[k]||0) > 0));
+  if(state.cats.size)    data = data.filter(e => state.cats.has(e.cat));
+  if(state.regions.size) data = data.filter(e => [...state.regions].some(r => matchRegion(e,r)));
+  if(state.srcs.size)    data = data.filter(e => state.srcs.has(e.src));
+  if(state.search){
+    const q = state.search.toLowerCase();
+    data = data.filter(e => e.title.toLowerCase().includes(q) || e.location.toLowerCase().includes(q) || (SRC_LABELS[e.src]||'').toLowerCase().includes(q));
+  }
+  data.sort((a,b)=>{
+    if(state.sort==='credits-desc') return totalCredits(b)-totalCredits(a) || a.date.localeCompare(b.date);
+    if(state.sort==='date-desc')    return b.date.localeCompare(a.date);
+    return a.date.localeCompare(b.date);
+  });
+  return data;
+}
+
+/* ============================================================
+   Google 行事曆連結
+   ============================================================ */
+function gcalUrl(e){
+  const ymd = e.date.replace(/-/g,'');
+  const end = new Date(e.date+'T00:00:00+08:00'); end.setDate(end.getDate()+1);
+  const endYmd = end.toISOString().slice(0,10).replace(/-/g,'');
+  const creditStr = creditKeys(e).map(k => `${CREDIT_LABELS[k]} ${e.credits[k]} 點`).join('、');
+  const details = [
+    `主辦：${SRC_LABELS[e.src]||e.src}`,
+    `積分：${creditStr}`,
+    e.ctext ? `備註：${e.ctext}` : '',
+    e.url ? `連結：${e.url}` : '',
+    '（實際場地與積分以主辦單位公告為準）'
+  ].filter(Boolean).join('\n');
+  const p = new URLSearchParams({ action:'TEMPLATE', text:e.title, dates:`${ymd}/${endYmd}`, details, location:e.location });
+  return 'https://calendar.google.com/calendar/render?'+p.toString();
+}
+
+/* ============================================================
+   卡片渲染
+   ============================================================ */
+function cardHtml(e){
+  const dl = daysLeft(e.date);
+  const d = new Date(e.date+'T00:00:00+08:00');
+  let leftCls='', leftTxt='';
+  if(dl < 0){ leftCls='past'; leftTxt='已結束'; }
+  else if(dl === 0){ leftCls='soon'; leftTxt='今天'; }
+  else if(dl <= 7){ leftCls='soon'; leftTxt=`剩 ${dl} 天`; }
+  else { leftTxt=`剩 ${dl} 天`; }
+
+  const creditTags = creditKeys(e).map(k =>
+    `<span class="tag credit ${k}">${CREDIT_SHORT[k]} ${e.credits[k]}</span>`).join('');
+  const srcLink = SRC_URL[e.src] ? ` href="${SRC_URL[e.src]}" target="_blank"` : '';
+
+  return `<div class="card cat-${e.cat}">
+    <div class="d-row">
+      <span class="date">${e.date.replace(/-/g,'/')}</span>
+      <span class="wd">（${WD[d.getDay()]}）</span>
+      <span class="left ${leftCls}">${leftTxt}</span>
+    </div>
+    <h3>${esc(e.title)}</h3>
+    <div class="tags">
+      ${creditTags}
+      <span class="tag cat">${CAT_LABELS[e.cat]||'其他'}</span>
+      <span class="tag region">${(REGION_LABELS[e.region]||'')}</span>
+      ${e.online?'<span class="tag online">💻 線上</span>':''}
+      ${e.ctext?`<span class="tag note">${esc(e.ctext)}</span>`:''}
+    </div>
+    <div class="loc">📍 <span>${esc(e.location)}</span></div>
+    <div class="actions">
+      ${e.url?`<a class="btn" href="${e.url}" target="_blank">課程詳情 →</a>`:''}
+      <a class="btn"${srcLink}>${esc(SRC_LABELS[e.src]||e.src)}</a>
+      <a class="btn gcal" href="${gcalUrl(e)}" target="_blank">📅 加入行事曆</a>
+    </div>
+  </div>`;
+}
+
+function render(){
+  const data = getFiltered();
+  const grid = document.getElementById('grid');
+  grid.innerHTML = data.length
+    ? data.map(cardHtml).join('')
+    : '<div class="empty">😔 沒有符合條件的課程，請調整篩選條件。</div>';
+  document.getElementById('show-n').textContent = data.length;
+}
+
+/* ============================================================
+   初始化：來源 pill、事件綁定、統計
+   ============================================================ */
+function buildSrcPills(){
+  const row = document.getElementById('src-pills');
+  Object.keys(SRC_LABELS).forEach(code=>{
+    const b = document.createElement('button');
+    b.className='pill'; b.dataset.src=code; b.textContent=SRC_LABELS[code];
+    row.appendChild(b);
+  });
+}
+
+function bindPillRow(rowId, key){
+  document.getElementById(rowId).addEventListener('click', ev=>{
+    const btn = ev.target.closest('.pill'); if(!btn) return;
+    const row = document.getElementById(rowId);
+    const val = btn.dataset.credit || btn.dataset.cat || btn.dataset.region || btn.dataset.src;
+    if(val==='all'){
+      state[key].clear();
+    } else {
+      state[key].has(val) ? state[key].delete(val) : state[key].add(val);
+    }
+    // 更新 active 樣式
+    row.querySelectorAll('.pill').forEach(p=>{
+      const v = p.dataset.credit || p.dataset.cat || p.dataset.region || p.dataset.src;
+      p.classList.toggle('active', v==='all' ? state[key].size===0 : state[key].has(v));
+    });
+    render();
+  });
+}
+
+function initStats(){
+  const dates = EVENTS.map(e=>e.date).sort();
+  document.getElementById('b-range').textContent = `📅 ${dates[0].replace(/-/g,'/')} – ${dates[dates.length-1].replace(/-/g,'/')}`;
+  document.getElementById('b-count').textContent = `📚 共 ${EVENTS.length} 筆`;
+  document.getElementById('total-n').textContent = EVENTS.length;
+}
+
+buildSrcPills();
+bindPillRow('credit-pills','credits');
+bindPillRow('cat-pills','cats');
+bindPillRow('region-pills','regions');
+bindPillRow('src-pills','srcs');
+document.getElementById('search').addEventListener('input', e=>{ state.search=e.target.value.trim(); render(); });
+document.getElementById('sort').addEventListener('change', e=>{ state.sort=e.target.value; render(); });
+initStats();
+render();
+</script>
+</body>
+</html>
