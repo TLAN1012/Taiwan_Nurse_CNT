@@ -31,7 +31,7 @@ from scrape import scrape_all  # noqa: E402
 
 
 def norm_key(e: dict):
-    return (e.get("date", ""), re.sub(r"\s+", "", e.get("title", ""))[:20])
+    return (e.get("date", ""), e.get("src", ""), re.sub(r"\s+", "", e.get("title", "")))
 
 
 def load_doc() -> dict:
@@ -58,6 +58,9 @@ def main():
     hi = today + timedelta(days=WINDOW_DAYS)
     kept = []
     for e in events:
+        if e.get("ondemand"):        # 線上隨選課程不受時間窗上限限制
+            kept.append(e)
+            continue
         try:
             d = datetime.strptime(e["date"], "%Y-%m-%d").date()
         except Exception:  # noqa: BLE001

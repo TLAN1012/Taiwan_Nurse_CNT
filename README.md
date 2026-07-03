@@ -6,8 +6,10 @@
 架構參考自 [基層神經科醫師教育活動全集（Taiwan_Neurology）](https://tlan1012.github.io/Taiwan_Neurology/)，
 並針對「護理積分」的特性做了重要延伸。
 
-> ⚠️ 目前 `data/events.json` 內為**範例資料**，用於展示聚合架構。實際課程、日期、
-> 學分數與適用積分別，**一律以各主辦公會／學會之官方公告為準**。
+> ℹ️ `data/events.json` 內為**實際抓取自各公會／學會公開頁面**的課程資料（快照）。
+> 目前公開可抓取者為**護理師護士公會全聯會、麻醉專科護理學會、精神衛生護理學會**；
+> 台灣護理學會、專科護理師學會等多數學會之課程列表**需登入會員**，僅能取得公開／精選課程。
+> 實際課程、日期、學分數與適用積分別，**一律以各主辦公會／學會之官方公告為準**。
 
 ---
 
@@ -91,11 +93,14 @@ Taiwan_Nurse_CNT/
   "cat": "pro",                             // pro|quality|ethics|law|other
   "src": "tana",                            // 對應 scripts/sources.py
   "online": false,
+  "ondemand": false,                        // true=線上隨選課程（不受時間窗上限限制，卡片顯示「線上隨選」）
   "region": "north",                        // north|central|south|east|online|other
   "ctext": "含感染管制 3 點",                // 積分備註（可空字串）
   "url": "https://www.tana.org.tw/"
 }
 ```
+
+> `credits` 可為空物件 `{}`（積分依主辦公告），卡片會顯示「積分依公告」。
 
 ## 更新資料
 

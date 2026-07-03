@@ -49,6 +49,7 @@ def load_events(data_path: Path) -> list:
             "cat": e.get("cat") if e.get("cat") in VALID_CATS else "other",
             "src": e.get("src") or "other",
             "online": bool(e.get("online")),
+            "ondemand": bool(e.get("ondemand")),
             "region": e.get("region") if e.get("region") in VALID_REGIONS else "other",
             "ctext": (e.get("ctext") or "").strip(),
             "url": (e.get("url") or "").strip(),
@@ -60,7 +61,7 @@ def dedupe(events: list) -> list:
     """相同日期且標題高度相似者去重（保留先出現者）。"""
     seen = {}
     for e in events:
-        key = (e["date"], re.sub(r"\s+", "", e["title"])[:20])
+        key = (e["date"], e["src"], re.sub(r"\s+", "", e["title"]))
         if key not in seen:
             seen[key] = e
     return list(seen.values())
@@ -69,11 +70,12 @@ def dedupe(events: list) -> list:
 def js_event(e: dict) -> str:
     credits = "{" + ", ".join(f"{k}:{_num(e['credits'][k])}"
                               for k in CREDIT_ORDER if k in e["credits"]) + "}"
+    ondemand = ", ondemand:true" if e.get("ondemand") else ""
     return ("  {date:%s, title:%s, location:%s, credits:%s, cat:%s, src:%s, "
-            "online:%s, region:%s, ctext:%s, url:%s}") % (
+            "online:%s, region:%s, ctext:%s, url:%s%s}") % (
         _s(e["date"]), _s(e["title"]), _s(e["location"]), credits,
         _s(e["cat"]), _s(e["src"]), "true" if e["online"] else "false",
-        _s(e["region"]), _s(e["ctext"]), _s(e["url"]))
+        _s(e["region"]), _s(e["ctext"]), _s(e["url"]), ondemand)
 
 
 def _s(v: str) -> str:
@@ -95,6 +97,10 @@ def inject(html: str, events: list) -> str:
     html = re.sub(
         r"const TODAY = new Date\('[^']*'\); /\* TODAY:AUTO \*/",
         f"const TODAY = new Date('{today}T00:00:00+08:00'); /* TODAY:AUTO */",
+        html)
+    html = re.sub(
+        r'(<span id="updated">).*?(</span>)',
+        lambda m: m.group(1) + today + m.group(2),
         html)
     return html
 
