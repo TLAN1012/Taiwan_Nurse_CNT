@@ -163,7 +163,7 @@
 </header>
 
 <div class="notice">
-  <b>ℹ️ 資料說明：</b>課程資料<b>自動抓取自各護理公會／學會之公開頁面</b>（最後更新：<span id="updated">2026-07-03</span>）。本站的價值在<b>聚合</b>——把需登入才看得到的學會之<b>公開精選課程</b>也一併整理進來。目前涵蓋：護理師護士公會全聯會、急重症護理學會、麻醉專科護理學會、精神衛生護理學會、手術全期護理學會（精選公告）等；台灣護理學會、專科護理師學會等站台阻擋程式擷取或需登入，僅能取得公開部分。實際課程、日期、學分與積分別<b>一律以各主辦公會／學會之官方公告為準</b>。
+  <b>ℹ️ 資料說明：</b>課程資料<b>自動抓取自各護理公會／學會之公開頁面</b>（最後更新：<span id="updated">2026-07-05</span>）。本站的價值在<b>聚合</b>——把需登入才看得到的學會之<b>公開精選課程</b>也一併整理進來。目前涵蓋：護理師護士公會全聯會、急重症護理學會、麻醉專科護理學會、精神衛生護理學會、手術全期護理學會（精選公告）等；台灣護理學會、專科護理師學會等站台阻擋程式擷取或需登入，僅能取得公開部分。實際課程、日期、學分與積分別<b>一律以各主辦公會／學會之官方公告為準</b>。
 </div>
 
 <div class="filters">
@@ -316,7 +316,7 @@ const EVENTS = [
 const state = { credits:new Set(), cats:new Set(), regions:new Set(), srcs:new Set(), search:'', sort:'date-asc' };
 const WD = ['日','一','二','三','四','五','六'];
 // 以固定「今天」計算剩餘天數（由 scripts/build.py 於每次更新時替換）
-const TODAY = new Date('2026-07-03T00:00:00+08:00'); /* TODAY:AUTO */
+const TODAY = new Date('2026-07-05T00:00:00+08:00'); /* TODAY:AUTO */
 
 function totalCredits(e){ return CREDIT_ORDER.reduce((s,k)=> s + (e.credits[k]||0), 0); }
 function creditKeys(e){ return CREDIT_ORDER.filter(k => (e.credits[k]||0) > 0); }
