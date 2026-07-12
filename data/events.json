@@ -16,7 +16,7 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-07-05T17:43:07+08:00"
+    "generated": "2026-07-12T17:02:17+08:00"
   },
   "events": [
     {
@@ -51,6 +51,20 @@
       "location": "台中慈濟醫院大愛講堂 台中市潭子區豐興路一段88號",
       "credits": {
         "nurse": 3
+      },
+      "cat": "pro",
+      "src": "nuna",
+      "online": false,
+      "region": "central",
+      "ctext": "",
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
+    },
+    {
+      "date": "2026-07-14",
+      "title": "臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略(中區-醫院推薦場) -中慈場",
+      "location": "台中慈濟醫院階梯教室",
+      "credits": {
+        "nurse": 7
       },
       "cat": "pro",
       "src": "nuna",
@@ -252,6 +266,30 @@
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
+      "date": "2026-08-06",
+      "title": "AI數位照護在精神科護理的運用研習會（南區）",
+      "location": "中華民國精神衛生護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "psy",
+      "online": false,
+      "region": "other",
+      "ctext": "積分依主辦公告",
+      "url": "https://www.psynurse.org.tw/news.aspx"
+    },
+    {
+      "date": "2026-08-15",
+      "title": "2026卓越照護:打造高效達文西手術護理團隊",
+      "location": "台灣手術全期護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "perio",
+      "online": false,
+      "region": "other",
+      "ctext": "精選公告，詳見學會",
+      "url": "https://www.torna.org.tw/"
+    },
+    {
       "date": "2026-08-19",
       "title": "115年「護理倫理暨法律研討會」 -中區(實體場)",
       "location": "彰化基督教醫院教學研究大樓12樓蘭大衛國際會議廳 彰化市旭光路235號",
@@ -278,6 +316,34 @@
       "region": "online",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/413"
+    },
+    {
+      "date": "2026-09-02",
+      "title": "重症照護3.0 - 智慧化、整合化、流程再進化研習會-南區",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 5
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "south",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/421"
+    },
+    {
+      "date": "2026-09-03",
+      "title": "重症照護3.0 - 智慧化、整合化、流程再進化研習會-中區",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 5
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "central",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/422"
     },
     {
       "date": "2026-09-04",
@@ -334,6 +400,20 @@
       "url": "https://www.taccn.org.tw/activity/detail/415"
     },
     {
+      "date": "2026-09-18",
+      "title": "2026.9.18~20 第七屆亞太急性腎損傷與連續性腎替代療法大會",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 0
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "other",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/423"
+    },
+    {
       "date": "2026-09-24",
       "title": "115年外傷護理繼續教育線上直播研習會(三)",
       "location": "中華民國急重症護理學會（線上直播）",
@@ -346,6 +426,20 @@
       "region": "online",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/419"
+    },
+    {
+      "date": "2026-10-16",
+      "title": "115年度急重症CKRT照護研習會(南區)",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 6
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "south",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/416"
     },
     {
       "date": "2026-12-31",
