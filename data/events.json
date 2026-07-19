@@ -16,63 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-07-12T17:02:17+08:00"
+    "generated": "2026-07-19T17:05:22+08:00"
   },
   "events": [
-    {
-      "date": "2026-07-09",
-      "title": "草本療癒力－中醫藥養生與心理健康促進之護理應用研習會",
-      "location": "中華民國精神衛生護理學會",
-      "credits": {},
-      "cat": "pro",
-      "src": "psy",
-      "online": false,
-      "region": "other",
-      "ctext": "積分依主辦公告",
-      "url": "https://www.psynurse.org.tw/news.aspx"
-    },
-    {
-      "date": "2026-07-10",
-      "title": "115年度急重症護理繼續教育視訊直播講座(四)急重症暴力與壓力因應",
-      "location": "中華民國急重症護理學會（線上直播）",
-      "credits": {
-        "nurse": 3
-      },
-      "cat": "pro",
-      "src": "critical",
-      "online": true,
-      "region": "online",
-      "ctext": "",
-      "url": "https://www.taccn.org.tw/activity/detail/409"
-    },
-    {
-      "date": "2026-07-14",
-      "title": "臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略 (中區) -中慈場",
-      "location": "台中慈濟醫院大愛講堂 台中市潭子區豐興路一段88號",
-      "credits": {
-        "nurse": 3
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "central",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-14",
-      "title": "臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略(中區-醫院推薦場) -中慈場",
-      "location": "台中慈濟醫院階梯教室",
-      "credits": {
-        "nurse": 7
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "central",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
     {
       "date": "2026-07-16",
       "title": "臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略(南區-醫院推薦場) -高醫岡山醫院",
