@@ -16,35 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-07-19T17:05:22+08:00"
+    "generated": "2026-07-26T17:13:21+08:00"
   },
   "events": [
-    {
-      "date": "2026-07-16",
-      "title": "臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略(南區-醫院推薦場) -高醫岡山醫院",
-      "location": "高雄醫學大學附設高醫岡山醫院11樓第一會議室",
-      "credits": {
-        "nurse": 7
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "south",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-18",
-      "title": "2026預防手術部位感染與病人安全工作坊",
-      "location": "台灣手術全期護理學會",
-      "credits": {},
-      "cat": "pro",
-      "src": "perio",
-      "online": false,
-      "region": "other",
-      "ctext": "精選公告，詳見學會",
-      "url": "https://www.torna.org.tw/"
-    },
     {
       "date": "2026-07-23",
       "title": "「住院整合照護服務品質與人力運用效益研析暨輔導計畫」期末成果發表會 -實體場",
@@ -386,6 +360,20 @@
       "region": "south",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/416"
+    },
+    {
+      "date": "2026-10-29",
+      "title": "115年度急重症CKRT照護研習會(中區)",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 6
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "central",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/417"
     },
     {
       "date": "2026-12-31",
