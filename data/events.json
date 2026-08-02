@@ -16,136 +16,26 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-07-26T17:13:21+08:00"
+    "generated": "2026-08-02T17:09:17+08:00"
   },
   "events": [
     {
-      "date": "2026-07-23",
-      "title": "「住院整合照護服務品質與人力運用效益研析暨輔導計畫」期末成果發表會 -實體場",
-      "location": "台大兒醫大樓B1講堂 臺北市中正區中山南路8號",
-      "credits": {
-        "nurse": 3.8
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "north",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-23",
-      "title": "115年「護理倫理暨法律研討會」 -北區(實體場)",
-      "location": "亞東紀念醫院南棟14樓國際會議廳 新北市板橋區南雅南路二段21號",
-      "credits": {
-        "nurse": 7.2
-      },
-      "cat": "law",
-      "src": "nuna",
-      "online": false,
-      "region": "north",
-      "ctext": "含性別議題",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-23",
-      "title": "115年「護理倫理暨法律研討會」 -東區(視訊場，仍須至指定教室上課)",
-      "location": "門諾醫院恩慈樓4樓401會議室 花蓮縣花蓮市民權路44號",
-      "credits": {
-        "nurse": 7.2
-      },
-      "cat": "law",
-      "src": "nuna",
-      "online": true,
-      "region": "east",
-      "ctext": "含性別議題",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-23",
-      "title": "115年「護理倫理暨法律研討會」 -金門區(視訊場，仍須至指定教室上課)",
-      "location": "衛生福利部金門醫院8樓視訊會議室 金門縣金湖鎮復興路2號",
-      "credits": {
-        "nurse": 7.2
-      },
-      "cat": "law",
-      "src": "nuna",
-      "online": true,
-      "region": "other",
-      "ctext": "含性別議題",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-23",
-      "title": "115年「護理倫理暨法律研討會」 -澎湖區(視訊場，仍須至指定教室上課)",
-      "location": "三軍總醫院澎湖分院EMT教室(舊院區二樓訓練教室） 澎湖縣馬公市前寮里90號",
-      "credits": {
-        "nurse": 7.2
-      },
-      "cat": "law",
-      "src": "nuna",
-      "online": true,
-      "region": "other",
-      "ctext": "含性別議題",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-23",
-      "title": "115年「護理倫理暨法律研討會」 -連江區(視訊場，仍須至指定教室上課)",
-      "location": "連江縣立醫院3樓講堂 連江縣南竿鄉復興村217號",
-      "credits": {
-        "nurse": 7.2
-      },
-      "cat": "law",
-      "src": "nuna",
-      "online": true,
-      "region": "other",
-      "ctext": "含性別議題",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-23",
-      "title": "115年度急重症護理繼續教育視訊直播講座(五)災難護理",
-      "location": "中華民國急重症護理學會（線上直播）",
-      "credits": {
-        "nurse": 3
-      },
-      "cat": "pro",
-      "src": "critical",
-      "online": true,
-      "region": "online",
-      "ctext": "",
-      "url": "https://www.taccn.org.tw/activity/detail/410"
-    },
-    {
-      "date": "2026-07-24",
-      "title": "護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(一)",
-      "location": "永和耕莘醫院住院大樓12樓國際會議廳 新北市永和區中興街80號",
+      "date": "2026-07-31",
+      "title": "護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場",
+      "location": "台中慈濟醫院感恩樓5樓階梯教室 台中市潭子區豐興路一段88號",
       "credits": {
         "nurse": 3
       },
       "cat": "pro",
       "src": "nuna",
       "online": false,
-      "region": "north",
+      "region": "central",
       "ctext": "",
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-29",
-      "title": "法官保留制度下探討強制住院精神照護權益研習會",
-      "location": "中華民國精神衛生護理學會",
-      "credits": {},
-      "cat": "law",
-      "src": "psy",
-      "online": false,
-      "region": "other",
-      "ctext": "積分依主辦公告",
-      "url": "https://www.psynurse.org.tw/news.aspx"
     },
     {
       "date": "2026-07-31",
-      "title": "護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場",
+      "title": "護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場",
       "location": "台中慈濟醫院感恩樓5樓階梯教室 台中市潭子區豐興路一段88號",
       "credits": {
         "nurse": 3
@@ -174,6 +64,20 @@
     {
       "date": "2026-08-05",
       "title": "護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(二)",
+      "location": "林口長庚紀念醫院醫學大樓第二會議廳 桃園市龜山區復興街5號",
+      "credits": {
+        "nurse": 3
+      },
+      "cat": "pro",
+      "src": "nuna",
+      "online": false,
+      "region": "north",
+      "ctext": "",
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
+    },
+    {
+      "date": "2026-08-05",
+      "title": "護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(二)",
       "location": "林口長庚紀念醫院醫學大樓第二會議廳 桃園市龜山區復興街5號",
       "credits": {
         "nurse": 3
@@ -306,6 +210,20 @@
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
+      "date": "2026-09-09",
+      "title": "護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -南部場",
+      "location": "高雄醫學大學附設中和紀念醫院啟川大樓6樓第二講堂 高雄市三民區自由一路100號",
+      "credits": {
+        "nurse": 3
+      },
+      "cat": "pro",
+      "src": "nuna",
+      "online": false,
+      "region": "south",
+      "ctext": "",
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
+    },
+    {
       "date": "2026-09-10",
       "title": "115年度急重症CKRT照護研習會(北區)",
       "location": "中華民國急重症護理學會",
@@ -346,6 +264,20 @@
       "region": "online",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/419"
+    },
+    {
+      "date": "2026-10-05",
+      "title": "台灣急診五級檢傷指導員訓練課程",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 6
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "other",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/425"
     },
     {
       "date": "2026-10-16",
