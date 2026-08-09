@@ -16,79 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-08-02T17:09:17+08:00"
+    "generated": "2026-08-09T15:53:53+08:00"
   },
   "events": [
-    {
-      "date": "2026-07-31",
-      "title": "護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場",
-      "location": "台中慈濟醫院感恩樓5樓階梯教室 台中市潭子區豐興路一段88號",
-      "credits": {
-        "nurse": 3
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "central",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-07-31",
-      "title": "護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場",
-      "location": "台中慈濟醫院感恩樓5樓階梯教室 台中市潭子區豐興路一段88號",
-      "credits": {
-        "nurse": 3
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "central",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-08-05",
-      "title": "115年「護理倫理暨法律研討會」 -南區(實體場)",
-      "location": "高雄醫學大學附設中和紀念醫院啟川大樓6樓第一講堂 高雄市三民區自由一路100號",
-      "credits": {
-        "nurse": 7.2
-      },
-      "cat": "law",
-      "src": "nuna",
-      "online": false,
-      "region": "south",
-      "ctext": "含性別議題",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-08-05",
-      "title": "護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(二)",
-      "location": "林口長庚紀念醫院醫學大樓第二會議廳 桃園市龜山區復興街5號",
-      "credits": {
-        "nurse": 3
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "north",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
-    {
-      "date": "2026-08-05",
-      "title": "護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(二)",
-      "location": "林口長庚紀念醫院醫學大樓第二會議廳 桃園市龜山區復興街5號",
-      "credits": {
-        "nurse": 3
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "north",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
     {
       "date": "2026-08-06",
       "title": "AI數位照護在精神科護理的運用研習會（南區）",
@@ -140,6 +70,18 @@
       "region": "online",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/413"
+    },
+    {
+      "date": "2026-08-22",
+      "title": "2026手術病人擺位與預防壓力性損傷工作坊",
+      "location": "台灣手術全期護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "perio",
+      "online": false,
+      "region": "other",
+      "ctext": "精選公告，詳見學會",
+      "url": "https://www.torna.org.tw/"
     },
     {
       "date": "2026-09-02",

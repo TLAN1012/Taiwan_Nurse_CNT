@@ -163,7 +163,7 @@
 </header>
 
 <div class="notice">
-  <b>ℹ️ 資料說明：</b>課程資料<b>自動抓取自各護理公會／學會之公開頁面</b>（最後更新：<span id="updated">2026-08-02</span>）。本站的價值在<b>聚合</b>——把需登入才看得到的學會之<b>公開精選課程</b>也一併整理進來。目前涵蓋：護理師護士公會全聯會、急重症護理學會、麻醉專科護理學會、精神衛生護理學會、手術全期護理學會（精選公告）等；台灣護理學會、專科護理師學會等站台阻擋程式擷取或需登入，僅能取得公開部分。實際課程、日期、學分與積分別<b>一律以各主辦公會／學會之官方公告為準</b>。
+  <b>ℹ️ 資料說明：</b>課程資料<b>自動抓取自各護理公會／學會之公開頁面</b>（最後更新：<span id="updated">2026-08-09</span>）。本站的價值在<b>聚合</b>——把需登入才看得到的學會之<b>公開精選課程</b>也一併整理進來。目前涵蓋：護理師護士公會全聯會、急重症護理學會、麻醉專科護理學會、精神衛生護理學會、手術全期護理學會（精選公告）等；台灣護理學會、專科護理師學會等站台阻擋程式擷取或需登入，僅能取得公開部分。實際課程、日期、學分與積分別<b>一律以各主辦公會／學會之官方公告為準</b>。
 </div>
 
 <div class="filters">
@@ -279,15 +279,11 @@ const REGION_LABELS = { north:'🏙️ 北部', central:'🏔️ 中部', south:
    ============================================================ */
 /* EVENTS:START — 此區塊由 scripts/build.py 依 data/events.json 自動產生，可手動編輯作為預設範例 */
 const EVENTS = [
-  {date:"2026-07-31", title:"護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場", location:"台中慈濟醫院感恩樓5樓階梯教室 台中市潭子區豐興路一段88號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"central", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
-  {date:"2026-07-31", title:"護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -中部場", location:"台中慈濟醫院感恩樓5樓階梯教室 台中市潭子區豐興路一段88號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"central", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
-  {date:"2026-08-05", title:"115年「護理倫理暨法律研討會」 -南區(實體場)", location:"高雄醫學大學附設中和紀念醫院啟川大樓6樓第一講堂 高雄市三民區自由一路100號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:false, region:"south", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
-  {date:"2026-08-05", title:"護理領導力培育與護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(二)", location:"林口長庚紀念醫院醫學大樓第二會議廳 桃園市龜山區復興街5號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"north", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
-  {date:"2026-08-05", title:"護理職涯永續支持計畫─護理的社會力：跨專業對話與護理職涯永續論壇 -北部場(二)", location:"林口長庚紀念醫院醫學大樓第二會議廳 桃園市龜山區復興街5號", credits:{nurse:3}, cat:"pro", src:"nuna", online:false, region:"north", ctext:"", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-08-06", title:"AI數位照護在精神科護理的運用研習會（南區）", location:"中華民國精神衛生護理學會", credits:{}, cat:"pro", src:"psy", online:false, region:"other", ctext:"積分依主辦公告", url:"https://www.psynurse.org.tw/news.aspx"},
   {date:"2026-08-15", title:"2026卓越照護:打造高效達文西手術護理團隊", location:"台灣手術全期護理學會", credits:{}, cat:"pro", src:"perio", online:false, region:"other", ctext:"精選公告，詳見學會", url:"https://www.torna.org.tw/"},
   {date:"2026-08-19", title:"115年「護理倫理暨法律研討會」 -中區(實體場)", location:"彰化基督教醫院教學研究大樓12樓蘭大衛國際會議廳 彰化市旭光路235號", credits:{nurse:7.2}, cat:"law", src:"nuna", online:false, region:"central", ctext:"含性別議題", url:"https://www.nurse.org.tw/publicUI/D/D101.aspx"},
   {date:"2026-08-21", title:"115年度急重症護理繼續教育視訊直播講座(六)急重症器官衰竭照護", location:"中華民國急重症護理學會（線上直播）", credits:{nurse:3}, cat:"pro", src:"critical", online:true, region:"online", ctext:"", url:"https://www.taccn.org.tw/activity/detail/413"},
+  {date:"2026-08-22", title:"2026手術病人擺位與預防壓力性損傷工作坊", location:"台灣手術全期護理學會", credits:{}, cat:"pro", src:"perio", online:false, region:"other", ctext:"精選公告，詳見學會", url:"https://www.torna.org.tw/"},
   {date:"2026-09-02", title:"重症照護3.0 - 智慧化、整合化、流程再進化研習會-南區", location:"中華民國急重症護理學會", credits:{nurse:5}, cat:"pro", src:"critical", online:false, region:"south", ctext:"", url:"https://www.taccn.org.tw/activity/detail/421"},
   {date:"2026-09-03", title:"重症照護3.0 - 智慧化、整合化、流程再進化研習會-中區", location:"中華民國急重症護理學會", credits:{nurse:5}, cat:"pro", src:"critical", online:false, region:"central", ctext:"", url:"https://www.taccn.org.tw/activity/detail/422"},
   {date:"2026-09-04", title:"將於115年9月4日舉辦115年度第12次醫療器材專業人員手術病人安全研習會(新學員及補學分課程)，", location:"台灣手術全期護理學會", credits:{}, cat:"pro", src:"perio", online:false, region:"other", ctext:"精選公告，詳見學會", url:"https://www.torna.org.tw/"},
@@ -313,7 +309,7 @@ const EVENTS = [
 const state = { credits:new Set(), cats:new Set(), regions:new Set(), srcs:new Set(), search:'', sort:'date-asc' };
 const WD = ['日','一','二','三','四','五','六'];
 // 以固定「今天」計算剩餘天數（由 scripts/build.py 於每次更新時替換）
-const TODAY = new Date('2026-08-02T00:00:00+08:00'); /* TODAY:AUTO */
+const TODAY = new Date('2026-08-09T00:00:00+08:00'); /* TODAY:AUTO */
 
 function totalCredits(e){ return CREDIT_ORDER.reduce((s,k)=> s + (e.credits[k]||0), 0); }
 function creditKeys(e){ return CREDIT_ORDER.filter(k => (e.credits[k]||0) > 0); }
