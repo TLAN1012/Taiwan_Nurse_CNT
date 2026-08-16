@@ -16,21 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-08-09T15:53:53+08:00"
+    "generated": "2026-08-16T15:30:38+08:00"
   },
   "events": [
-    {
-      "date": "2026-08-06",
-      "title": "AI數位照護在精神科護理的運用研習會（南區）",
-      "location": "中華民國精神衛生護理學會",
-      "credits": {},
-      "cat": "pro",
-      "src": "psy",
-      "online": false,
-      "region": "other",
-      "ctext": "積分依主辦公告",
-      "url": "https://www.psynurse.org.tw/news.aspx"
-    },
     {
       "date": "2026-08-15",
       "title": "2026卓越照護:打造高效達文西手術護理團隊",
@@ -114,6 +102,18 @@
     {
       "date": "2026-09-04",
       "title": "將於115年9月4日舉辦115年度第12次醫療器材專業人員手術病人安全研習會(新學員及補學分課程)，",
+      "location": "台灣手術全期護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "perio",
+      "online": false,
+      "region": "other",
+      "ctext": "精選公告，詳見學會",
+      "url": "https://www.torna.org.tw/"
+    },
+    {
+      "date": "2026-09-04",
+      "title": "加開課程預告：將於115年9月4日上午增辦2場醫療器材專業人員手術病人安全研習會補學分課程，報名後不",
       "location": "台灣手術全期護理學會",
       "credits": {},
       "cat": "pro",
@@ -239,9 +239,7 @@
       "date": "2026-10-29",
       "title": "115年度急重症CKRT照護研習會(中區)",
       "location": "中華民國急重症護理學會",
-      "credits": {
-        "nurse": 6
-      },
+      "credits": {},
       "cat": "pro",
       "src": "critical",
       "online": false,
