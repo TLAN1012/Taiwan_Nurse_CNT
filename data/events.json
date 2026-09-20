@@ -16,23 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-09-13T20:34:17+08:00"
+    "generated": "2026-09-20T20:03:07+08:00"
   },
   "events": [
-    {
-      "date": "2026-09-10",
-      "title": "115年度急重症CKRT照護研習會(北區)",
-      "location": "中華民國急重症護理學會",
-      "credits": {
-        "nurse": 6
-      },
-      "cat": "pro",
-      "src": "critical",
-      "online": false,
-      "region": "north",
-      "ctext": "",
-      "url": "https://www.taccn.org.tw/activity/detail/415"
-    },
     {
       "date": "2026-09-18",
       "title": "2026.9.18~20 第七屆亞太急性腎損傷與連續性腎替代療法大會",
