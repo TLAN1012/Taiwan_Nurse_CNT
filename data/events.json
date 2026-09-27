@@ -16,23 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-09-20T20:03:07+08:00"
+    "generated": "2026-09-27T20:48:41+08:00"
   },
   "events": [
-    {
-      "date": "2026-09-18",
-      "title": "2026.9.18~20 第七屆亞太急性腎損傷與連續性腎替代療法大會",
-      "location": "中華民國急重症護理學會",
-      "credits": {
-        "nurse": 0
-      },
-      "cat": "pro",
-      "src": "critical",
-      "online": false,
-      "region": "other",
-      "ctext": "",
-      "url": "https://www.taccn.org.tw/activity/detail/423"
-    },
     {
       "date": "2026-09-24",
       "title": "115年外傷護理繼續教育線上直播研習會(三)",
@@ -100,6 +86,20 @@
       "region": "central",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/417"
+    },
+    {
+      "date": "2026-11-11",
+      "title": "長照3.0醫養結合發展新視野研討會(東區) -",
+      "location": "羅東聖母醫院-外科大樓11樓大禮堂 宜蘭縣羅東鎮中正南路160號",
+      "credits": {
+        "nurse": 7.2
+      },
+      "cat": "pro",
+      "src": "nuna",
+      "online": false,
+      "region": "east",
+      "ctext": "",
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
       "date": "2026-11-19",
