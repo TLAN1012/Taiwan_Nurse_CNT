@@ -16,22 +16,22 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-10-04T21:03:53+08:00"
+    "generated": "2026-10-11T21:48:06+08:00"
   },
   "events": [
     {
-      "date": "2026-10-05",
-      "title": "台灣急診五級檢傷指導員訓練課程",
-      "location": "中華民國急重症護理學會",
+      "date": "2026-10-08",
+      "title": "臨床教師的留任藝術 CBME實務、AI創新與帶領新生代護理人的關鍵策略 (北區) -亞東醫院",
+      "location": "亞東醫院國際會議廳 新北市板橋區南雅南路二段21號（南棟14樓）",
       "credits": {
-        "nurse": 6
+        "nurse": 3
       },
       "cat": "pro",
-      "src": "critical",
+      "src": "nuna",
       "online": false,
-      "region": "other",
+      "region": "north",
       "ctext": "",
-      "url": "https://www.taccn.org.tw/activity/detail/425"
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
       "date": "2026-10-16",
@@ -58,6 +58,20 @@
       "src": "nuna",
       "online": false,
       "region": "south",
+      "ctext": "",
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
+    },
+    {
+      "date": "2026-10-27",
+      "title": "「兆元健保時代的護理治理:支付制度新趨勢」研討會(推薦名單查詢) -全日(或半日場)",
+      "location": "視訊",
+      "credits": {
+        "nurse": 6.4
+      },
+      "cat": "pro",
+      "src": "nuna",
+      "online": true,
+      "region": "online",
       "ctext": "",
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
@@ -90,6 +104,20 @@
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
+      "date": "2026-11-12",
+      "title": "2026智慧科技與人因工程在急重症照護及病人安全之臨床應用研習工作坊",
+      "location": "中華民國急重症護理學會",
+      "credits": {
+        "nurse": 6.2
+      },
+      "cat": "pro",
+      "src": "critical",
+      "online": false,
+      "region": "other",
+      "ctext": "",
+      "url": "https://www.taccn.org.tw/activity/detail/434"
+    },
+    {
       "date": "2026-11-19",
       "title": "115年度外傷護理指導員訓練課程(TNTP Instructor Course)",
       "location": "中華民國急重症護理學會",
@@ -102,6 +130,20 @@
       "region": "other",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/431"
+    },
+    {
+      "date": "2026-12-02",
+      "title": "腦血管疾病防治基金會25周年暨2026優秀護理人員表揚大會 -",
+      "location": "台大醫院國際會議中心401廳 台北市中正區徐州路2號4樓",
+      "credits": {
+        "nurse": 1.8
+      },
+      "cat": "pro",
+      "src": "nuna",
+      "online": false,
+      "region": "north",
+      "ctext": "",
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
       "date": "2026-12-31",
