@@ -16,23 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-10-25T20:21:59+08:00"
+    "generated": "2026-11-01T22:04:17+08:00"
   },
   "events": [
-    {
-      "date": "2026-10-27",
-      "title": "「兆元健保時代的護理治理:支付制度新趨勢」研討會(推薦名單查詢) -全日(或半日場)",
-      "location": "視訊",
-      "credits": {
-        "nurse": 6.4
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": true,
-      "region": "online",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
     {
       "date": "2026-10-29",
       "title": "115年度急重症CKRT照護研習會(中區)",
@@ -102,6 +88,18 @@
       "region": "other",
       "ctext": "",
       "url": "https://www.taccn.org.tw/activity/detail/431"
+    },
+    {
+      "date": "2026-11-21",
+      "title": "本會與INTUITIVE將於115年11月21日(星期六)『亞洲手術全期護理高峰會2026』(線上直",
+      "location": "台灣手術全期護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "perio",
+      "online": true,
+      "region": "online",
+      "ctext": "精選公告，詳見學會",
+      "url": "https://www.torna.org.tw/"
     },
     {
       "date": "2026-12-02",
