@@ -16,23 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-11-08T22:05:51+08:00"
+    "generated": "2026-11-15T22:32:16+08:00"
   },
   "events": [
-    {
-      "date": "2026-11-11",
-      "title": "長照3.0醫養結合發展新視野研討會(東區) -",
-      "location": "羅東聖母醫院-外科大樓11樓大禮堂 宜蘭縣羅東鎮中正南路160號",
-      "credits": {
-        "nurse": 7.2
-      },
-      "cat": "pro",
-      "src": "nuna",
-      "online": false,
-      "region": "east",
-      "ctext": "",
-      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
-    },
     {
       "date": "2026-11-12",
       "title": "2026智慧科技與人因工程在急重症照護及病人安全之臨床應用研習工作坊",
@@ -102,6 +88,18 @@
       "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
+      "date": "2026-12-03",
+      "title": "加開課程預告：將於115年12月3日增辦115年度第17次(北二場)醫療器材專業人員手術病人安全研習",
+      "location": "台灣手術全期護理學會",
+      "credits": {},
+      "cat": "pro",
+      "src": "perio",
+      "online": false,
+      "region": "other",
+      "ctext": "精選公告，詳見學會",
+      "url": "https://www.torna.org.tw/"
+    },
+    {
       "date": "2026-12-05",
       "title": "2026年度 手術電刀安全工作坊",
       "location": "台灣手術全期護理學會",
@@ -112,6 +110,20 @@
       "region": "other",
       "ctext": "精選公告，詳見學會",
       "url": "https://www.torna.org.tw/"
+    },
+    {
+      "date": "2026-12-10",
+      "title": "115年護理研究創新與數位教學成果發表暨頒獎典禮 -",
+      "location": "臺中榮民總醫院研究大樓一樓 臺中市西屯區臺灣大道四段1650號",
+      "credits": {
+        "nurse": 4.8
+      },
+      "cat": "pro",
+      "src": "nuna",
+      "online": false,
+      "region": "central",
+      "ctext": "",
+      "url": "https://www.nurse.org.tw/publicUI/D/D101.aspx"
     },
     {
       "date": "2026-12-31",
