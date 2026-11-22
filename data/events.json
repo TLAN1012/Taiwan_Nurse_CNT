@@ -16,37 +16,9 @@
       "law": "專業法規",
       "other": "其他"
     },
-    "generated": "2026-11-15T22:32:16+08:00"
+    "generated": "2026-11-22T23:05:00+08:00"
   },
   "events": [
-    {
-      "date": "2026-11-12",
-      "title": "2026智慧科技與人因工程在急重症照護及病人安全之臨床應用研習工作坊",
-      "location": "中華民國急重症護理學會",
-      "credits": {
-        "nurse": 6.2
-      },
-      "cat": "pro",
-      "src": "critical",
-      "online": false,
-      "region": "other",
-      "ctext": "",
-      "url": "https://www.taccn.org.tw/activity/detail/434"
-    },
-    {
-      "date": "2026-11-12",
-      "title": "2026智慧科技與人因工程在急重症照護及病人安全之臨床應用研習工作坊 (群益邀請)",
-      "location": "中華民國急重症護理學會",
-      "credits": {
-        "nurse": 6.2
-      },
-      "cat": "pro",
-      "src": "critical",
-      "online": false,
-      "region": "other",
-      "ctext": "",
-      "url": "https://www.taccn.org.tw/activity/detail/437"
-    },
     {
       "date": "2026-11-19",
       "title": "115年度外傷護理指導員訓練課程(TNTP Instructor Course)",
@@ -116,7 +88,7 @@
       "title": "115年護理研究創新與數位教學成果發表暨頒獎典禮 -",
       "location": "臺中榮民總醫院研究大樓一樓 臺中市西屯區臺灣大道四段1650號",
       "credits": {
-        "nurse": 4.8
+        "nurse": 7.2
       },
       "cat": "pro",
       "src": "nuna",
